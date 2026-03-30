@@ -1,1 +1,15 @@
+.calculadora {
+    margin: auto;
+    margin-top: 10vw;
+    max-width: 40vw;
+}
 
+.display {
+    width: 40vw;
+}
+
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 100px);
+}
