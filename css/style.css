@@ -1,15 +1,112 @@
 .calculadora {
+    background-color: black;
+    width: 150vw;
+    height: 60vw;
     margin: auto;
     margin-top: 10vw;
-    max-width: 40vw;
+    max-width: 50vw;
+    border-radius: 5%;
+
 }
 
 .display {
+    background-color: #6d6d6d;
     width: 40vw;
+    height: 5vw;
+    margin: 1vw;
+    margin-top: 7vw;
+    margin-left: 4vw;
 }
 
 .botoes {
+    background-color: #000000;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 100px);
+    grid-template-rows: repeat(6, 50px);
+    max-width: 40vw;
+    margin: auto;
+}
+
+button.numero {
+    color: #FFFFFF;
+    font-size: x-large;
+    background-color: #464646;
+    border-style: none;
+    border-radius: 10%;
+    margin: 2px
+}
+
+button.numero:hover {
+    color: #FFFFFF;
+    font-size: x-large;
+    background-color: #5c5c5c;
+    border-style: none;
+    border-radius: 10%;
+    margin: 2px
+}
+
+button.numero:active {
+    color: #FFFFFF;
+    font-size: x-large;
+    transform: scale(0.95);
+    background-color: #8a8a8a;
+    border-style: none;
+    border-radius: 10%;
+    margin: 2px
+}
+
+button.operacao{
+    color: #FFFFFF;
+    font-size: x-large;
+    background-color: #222222;
+    border-style: none;
+    border-radius: 10%;
+    margin: 2px
+}
+
+button.operacao:hover{
+    color: #FFFFFF;
+    font-size: x-large;
+    background-color: #8a8a8a20;
+    border-style: none;
+    border-radius: 10%;
+    margin: 2px
+}
+
+button.operacao:active{
+    color: #FFFFFF;
+    font-size: x-large;
+    transform: scale(0.95);
+    background-color: #ffffff20;
+    border-style: none;
+    border-radius: 10%;
+    margin: 2px
+}
+
+button.extra, button.memoria {
+    color: #FFFFFF;
+    font-size: x-large;
+    background-color: #222222;
+    border-style: none;
+    border-radius: 10%;
+    margin: 2px
+}
+
+button.extra:hover, button.memoria:hover {
+    color: #FFFFFF;
+    font-size: x-large;
+    background-color: #8a8a8a20;
+    border-style: none;
+    border-radius: 10%;
+    margin: 2px
+}
+
+button.extra:active, button.memoria:active {
+    color: #FFFFFF;
+    font-size: x-large;
+    transform: scale(0.95);
+    background-color: #ffffff20;
+    border-style: none;
+    border-radius: 10%;
+    margin: 2px
 }
