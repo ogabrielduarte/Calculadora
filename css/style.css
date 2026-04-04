@@ -1,5 +1,10 @@
+@font-face {
+    font-family: 'DIGITAL INPUT';
+    src: url(/assets/fonts/DS-DIGIB.TTF);
+}
+
 body {
-    background-image: url('../public/wood_bg.jpg');
+    background-image: url('../assets/images/wood_bg.jpg');
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,6 +24,8 @@ body {
 .display {
     background-color: #61785f;
     color: #0b130b;
+    font-family: 'DIGITAL INPUT';
+    font-size: xx-large;
     text-align: right;
     border-style: hidden;
     width: 100%;
