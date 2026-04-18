@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'DIGITAL INPUT';
-    src: url(/assets/fonts/DS-DIGIB.TTF);
+    src: url(../assets/fonts/DS-DIGIB.TTF);
 }
 
 body {
@@ -33,6 +33,11 @@ body {
     box-sizing: border-box;
     margin-top: 5px;
     margin-bottom: 15px;
+}
+
+.display:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 .botoes {
