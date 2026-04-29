@@ -48,6 +48,37 @@ body {
     margin: auto;
 }
 
+button.ac {
+    color: #FFFFFF;
+    font-size: x-large;
+    background-color: #cd3801;
+    border-style: none;
+    border-radius: 10%;
+    width: 8vh;
+    margin: 2px
+}
+
+button.ac:hover {
+    color: #FFFFFF;
+    font-size: x-large;
+    background-color: #dd3b00;
+    border-style: none;
+    border-radius: 10%;
+    width: 8vh;
+    margin: 2px
+}
+
+button.ac:active {
+    color: #FFFFFF;
+    font-size: x-large;
+    transform: scale(0.98);
+    background-color: #f64200;
+    border-style: none;
+    border-radius: 10%;
+    width: 8vh;
+    margin: 2px
+}
+
 button.numero {
     color: #FFFFFF;
     font-size: x-large;
