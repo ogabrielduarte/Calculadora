@@ -15,5 +15,3 @@ export class Operacoes {
         return a / b;
     }
 }
-
-console.log(Operacoes.razao)
