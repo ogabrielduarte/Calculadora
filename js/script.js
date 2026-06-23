@@ -1,46 +1,39 @@
-const display = document.querySelector('.display');
-const botoes = document.querySelector('.botoes');
+import { Operacoes } from "./classes/Operacoes.js";
+import { Calculadora } from "./classes/Calculadora.js";
+import * as forSlots from "./utils/forSlots.js";
 
-let a = 0,
-    b = 0,
-    operadorSelecionado = null;
+const operacoes = new Operacoes();
+const calc = new Calculadora();
 
-let estado = false;
+const display = document.getElementById("display");
+const botoes = document.querySelector(".botoes");
 
-const operacoes = {
-    '+': (a, b) => a + b,
-    '-': (a, b) => a - b,
-    '*': (a, b) => a * b,
-    '/': (a, b) => a / b,
-}
+botoes.addEventListener("click", (event) => {
+    console.log(calc)
+    const alvo = event.target;
 
-function calcular(a, b, operador) {
-    return operacoes[operador](a, b)
-}
+    if (alvo.tagName === 'BUTTON') {
+        display.dataset.state = "active"
 
-botoes.addEventListener('click', (event) => {
-    const valorBotao = event.target.dataset.valor;
-
-    if (event.target.classList.contains('numero')) {
-        if (estado) {
-            display.value = valorBotao;
-            estado = false;
-        } else {
-            display.value += valorBotao;
-        }
-    } else if (event.target.classList.contains('ac') || event.target.classList.contains('c')) {
-        display.value = ''
-    } else if (event.target.classList.contains('operacao')) {
-        let valorAtual = Number(display.value);
-
-        if (a != 0 && operadorSelecionado != null) {
-            a = calcular(a, valorAtual, operador);
-            display.value = a;
-        } else {
-            a = valorAtual;
+        if (alvo.className === "numero" && display.dataset.state === "active") {
+            display.value += alvo.dataset.valor;
         }
 
-        operadorSelecionado = valorBotao;
-        estado = true;
+        if (alvo.className === "operacao") {
+            const op = alvo.dataset.operacao;
+
+            calc.currentOperation = alvo.dataset.operacao;
+
+            if(!calc.slotA) {
+                forSlots.storeA(calc, display.value);
+            }
+
+            if(calc.slotA && !calc.slotB) {
+                forSlots.storeB(calc, display.value);
+            }
+
+        }
     }
-})
+});
+
+
