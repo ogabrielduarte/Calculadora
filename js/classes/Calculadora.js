@@ -1,6 +1,6 @@
 export class Calculadora {
     constructor() {
-        this.slotA = 0;
+        this.slotA = null;
         this.slotB = null;
 
         this.memoryA = null;
