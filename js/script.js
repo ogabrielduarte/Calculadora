@@ -54,8 +54,6 @@ botoes.addEventListener("click", (event) => {
 
             display.value = operacoes[op](calc.slotA, calc.slotB);
         }
-
-        console.log(calc)
     }
 
 });
