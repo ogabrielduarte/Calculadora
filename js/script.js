@@ -32,7 +32,7 @@ botoes.addEventListener("click", (event) => {
             display.value += alvo.dataset.valor;
         }
 
-        if (alvo.className === "operacao" && alvo.dataset.operacao !== "resultado" && !calc.slotB) {
+        if (alvo.className === "operacao" && alvo.dataset.operacao !== "resultado") {
             calc.currentOperation = alvo.dataset.operacao;
             calc.status = true;
             slots.storeA(calc, display.value);
