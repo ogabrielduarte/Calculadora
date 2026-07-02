@@ -32,22 +32,24 @@ botoes.addEventListener("click", (event) => {
             display.value += alvo.dataset.valor;
         }
 
-        if (alvo.className === "operacao" && alvo.dataset.operacao !== "resultado") {
+        if(alvo.className === "operacao" && calc.currentOperation && alvo.dataset.operacao) {
+            calc.currentOperation = alvo.dataset.operacao;
+            display.value = '';
+        } else if (alvo.className === "operacao" && alvo.dataset.operacao) {
             calc.currentOperation = alvo.dataset.operacao;
             calc.status = true;
             slots.storeA(calc, display.value);
             display.value = '';
         }
 
-        if(alvo.dataset.operacao === "resultado" && !calc.slotB) {
+        if(alvo.dataset.res && !calc.slotB) {
             slots.storeB(calc, display.value);
 
             const op = calc.currentOperation;
 
             display.value = operacoes[op](calc.slotA, calc.slotB);
-        }
 
-        if (alvo.dataset.operacao === "resultado" && calc.slotA && calc.slotB) {
+        } else if (alvo.dataset.res && calc.slotA && calc.slotB) {
             const op = calc.currentOperation;
 
             display.value = operacoes[op](calc.slotA, calc.slotB);
