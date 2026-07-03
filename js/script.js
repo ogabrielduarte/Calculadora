@@ -37,7 +37,6 @@ botoes.addEventListener("click", (event) => {
             display.value = '';
         } else if (alvo.className === "operacao" && alvo.dataset.operacao) {
             calc.currentOperation = alvo.dataset.operacao;
-            calc.status = true;
             slots.storeA(calc, display.value);
             display.value = '';
         }
