@@ -12,6 +12,6 @@ export class Operacoes {
     }
 
     razao(a, b) {
-        return a / b;
+        return (a / b).toFixed(10);
     }
 }
