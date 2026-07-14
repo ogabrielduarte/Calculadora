@@ -12,6 +12,13 @@ export class Operacoes {
     }
 
     razao(a, b) {
-        return (a / b).toFixed(10);
+        const res = a / b;
+        const split = res.toString().split('.')
+
+        if(split[1].length > 10) {
+            return (`${res.toFixed(9)}...`);
+        }
+
+        return res;
     }
 }
