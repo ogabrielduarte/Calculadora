@@ -4,7 +4,7 @@ export function allClear(c, d) {
     c.memoryA = null;
     c.memoryB = null;
     c.currentOperation = null;
-    c.status = false;
+    c.lastValue = null;
 
     d.value = ''
 }

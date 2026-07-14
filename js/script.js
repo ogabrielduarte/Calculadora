@@ -16,6 +16,7 @@ const botoes = document.querySelector(".botoes")
 
 botoes.addEventListener("click", (event) => {
     const alvo = event.target;
+    const op = calc.currentOperation;
 
     if (alvo.tagName === 'BUTTON') {
 
@@ -32,7 +33,7 @@ botoes.addEventListener("click", (event) => {
             display.value += alvo.dataset.valor;
         }
 
-        if(alvo.className === "operacao" && calc.currentOperation && alvo.dataset.operacao) {
+        if (alvo.className === "operacao" && calc.currentOperation && alvo.dataset.operacao) {
             calc.currentOperation = alvo.dataset.operacao;
             display.value = '';
         } else if (alvo.className === "operacao" && alvo.dataset.operacao) {
@@ -41,18 +42,16 @@ botoes.addEventListener("click", (event) => {
             display.value = '';
         }
 
-        if(alvo.dataset.res && !calc.slotB) {
+        if (alvo.dataset.res) {
             slots.storeB(calc, display.value);
+            
+            const resultado = operacoes[op](calc.slotA, calc.slotB);
 
-            const op = calc.currentOperation;
-
-            display.value = operacoes[op](calc.slotA, calc.slotB);
-
-        } else if (alvo.dataset.res && calc.slotA && calc.slotB) {
-            const op = calc.currentOperation;
-
-            display.value = operacoes[op](calc.slotA, calc.slotB);
+            display.value = resultado;
+            calc.lastValue = resultado;
         }
+
+        console.log(calc)
     }
 
 });
