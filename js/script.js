@@ -12,7 +12,7 @@ const operacoes = new Operacoes();
 const calc = new Calculadora();
 
 const display = document.getElementById("display");
-const botoes = document.querySelector(".botoes")
+const botoes = document.querySelector(".botoes");
 
 botoes.addEventListener("click", (event) => {
     const alvo = event.target;
@@ -48,7 +48,7 @@ botoes.addEventListener("click", (event) => {
             const resultado = operacoes[op](calc.slotA, calc.slotB);
 
             display.value = resultado;
-            calc.lastValue = resultado;
+            calc.slotA = resultado;
         }
 
         console.log(calc)
