@@ -5,6 +5,9 @@ import { Calculadora } from "./classes/Calculadora.js";
 // ===== FUNÇÕES DE ARMAZENAMENTO DE VALORES =====
 import * as slots from "./utils/forSlots.js";
 
+//
+import { zero } from "./utils/zero.js";
+
 // ===== FUNÇÃO DE LIMPEZA =====
 import { allClear } from "./utils/clearOp.js";
 
@@ -42,16 +45,20 @@ botoes.addEventListener("click", (event) => {
             display.value = '';
         }
 
+
         if (alvo.dataset.res) {
+
             slots.storeB(calc, display.value);
-            
+
+            if (alvo.dataset.res && calc.slotB === 0 && calc.currentOperation === 'razao') {
+                zero(display);
+            }
+
             const resultado = operacoes[op](calc.slotA, calc.slotB);
 
             display.value = resultado;
             calc.slotA = resultado;
         }
-
-        console.log(calc)
     }
 
 });
