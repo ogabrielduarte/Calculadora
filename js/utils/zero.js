@@ -32,20 +32,18 @@ export function zero(display) {
     });
 
     setTimeout(() => {
+        som.play();
+
         setTimeout(() => {
-            som.play();
+            calc.style.display = 'none';
+            document.body.appendChild(boom);
+            document.body.appendChild(warning);
 
             setTimeout(() => {
-                calc.style.display = 'none';
-                document.body.appendChild(boom);
-                document.body.appendChild(warning);
+                warning.appendChild(p);
+                warning.appendChild(refresh);
+            }, 4000);
 
-                setTimeout(() => {
-                    warning.appendChild(p);
-                    warning.appendChild(refresh);
-                }, 4000);
-
-            }, 1850);
-        }, 3500);
-    }, 4500);
+        }, 1850);
+    }, 3500);
 }
