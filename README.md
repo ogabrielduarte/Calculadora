@@ -7,9 +7,7 @@ resolver um zilhão de perguntas com um único clique. Já me deu muita dor de c
 se eu continuar. Portanto, vou passar um tempo planejando como deixar o sistema funcional de vez, muito
 provavelmente usando _/utils_ de verdade agora, com funções do tipo _resolverCalculo()_ para o botão '='
 ao invés de deixar tudo num if — o que é notavelmente inadequado.
-
-precisarei 
-
+##
 Este projeto tem por objetivo criar uma **calculadora Web** inspirada em modelos Casio simples.
 
 O projeto protagonizará a utilização eficiente de **funções de memória**, 
