@@ -31,7 +31,6 @@ botoes.addEventListener("click", (event) => {
             display.value = '';
         }
 
-
         if (alvo.className === "numero") {
             display.value += alvo.dataset.valor;
         }
@@ -45,8 +44,13 @@ botoes.addEventListener("click", (event) => {
             display.value = '';
         }
 
+        if (alvo.dataset.res && calc.lastValue) {
+            const resultado = operacoes[op](calc.lastValue, calc.slotB);
 
-        if (alvo.dataset.res) {
+            display.value = resultado;
+            calc.lastValue = resultado;
+
+        } else if (alvo.dataset.res) {
 
             slots.storeB(calc, display.value);
 
@@ -57,7 +61,7 @@ botoes.addEventListener("click", (event) => {
             const resultado = operacoes[op](calc.slotA, calc.slotB);
 
             display.value = resultado;
-            calc.slotA = resultado;
+            calc.lastValue = resultado;
         }
     }
 
