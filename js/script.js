@@ -1,4 +1,5 @@
 // ===== CLASSES PADRÃO =====
+
 import { Operacoes } from "./classes/Operacoes.js";
 import { Calculadora } from "./classes/Calculadora.js";
 
@@ -31,15 +32,20 @@ botoes.addEventListener("click", (event) => {
             display.value = '';
         }
 
-        if (alvo.className === "numero") {
+        if(alvo.className === "numero" && calc.lastRes) {
+            allClear(calc, display);
+            calc.lastRes = false
+        } else if (alvo.className === "numero") {
             display.value += alvo.dataset.valor;
         }
 
         if (alvo.className === "operacao" && calc.currentOperation && alvo.dataset.operacao) {
             calc.currentOperation = alvo.dataset.operacao;
+            calc.lastRes = false;
             display.value = '';
         } else if (alvo.className === "operacao" && alvo.dataset.operacao) {
             calc.currentOperation = alvo.dataset.operacao;
+            calc.lastRes = false;
             slots.storeA(calc, display.value);
             display.value = '';
         }
@@ -57,12 +63,22 @@ botoes.addEventListener("click", (event) => {
             if (alvo.dataset.res && calc.slotB === 0 && calc.currentOperation === 'razao') {
                 zero(display);
             }
+            
+            let val;
+            if(calc.lastValue) {
+                val = calc.lastValue;
+            } else {
+                val = calc.slotA;
+            }
 
-            const resultado = operacoes[op](calc.slotA, calc.slotB);
+            const resultado = operacoes[op](val, calc.slotB);
 
             display.value = resultado;
             calc.lastValue = resultado;
+            calc.lastRes = true
         }
+
+        console.log(calc)
     }
 
 });
