@@ -1,6 +1,6 @@
 ## STATUS: Em desenvolvimento
 
-##NOTA (2026-07-15)
+## NOTA (2026-07-15)
 O projeto, até esta data, estava contando com uma abordagem extremamente simples — ainda que _quase_
 funcional. Acabou que o _botoes.addEventlistener_ virou um gigantesco controlador de estados que tenta 
 resolver um zilhão de perguntas com um único clique. Já me deu muita dor de cabeça, e vai dar muito mais 
