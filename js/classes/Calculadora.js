@@ -5,6 +5,7 @@ export class Calculadora {
 
         this.memoryA = null;
         this.memoryB = null;
+        this.memoryOp = null;
 
         this.currentOperation = null;
         this.lastValue = null;
