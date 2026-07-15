@@ -9,5 +9,6 @@ export class Calculadora {
 
         this.currentOperation = null;
         this.lastValue = null;
+        this.lastRes = false;
     }
 }

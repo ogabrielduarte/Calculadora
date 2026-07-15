@@ -13,10 +13,16 @@ export class Operacoes {
 
     razao(a, b) {
         const res = a / b;
-        const split = res.toString().split('.')
+        const split = res.toString().split('.');
 
-        if(split[1].length > 10) {
-            return (`${res.toFixed(9)}...`);
+        if(split[1]) {
+            if(split[1].length > 10){
+                return (`${res.toFixed(9)}...`);
+            }
+        }
+
+        if(isNaN(res)) {
+            return 'ERR'
         }
 
         return res;
