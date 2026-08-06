@@ -32,7 +32,7 @@ botoes.addEventListener("click", (event) => {
             display.value = '';
         }
 
-        if(alvo.className === "numero" && calc.lastRes) {
+        if (alvo.className === "numero" && calc.lastRes) {
             allClear(calc, display);
             calc.lastRes = false
         } else if (alvo.className === "numero") {
@@ -62,20 +62,20 @@ botoes.addEventListener("click", (event) => {
 
             if (alvo.dataset.res && calc.slotB === 0 && calc.currentOperation === 'razao') {
                 zero(display);
-            }
-            
-            let val;
-            if(calc.lastValue) {
-                val = calc.lastValue;
             } else {
-                val = calc.slotA;
+                let val;
+                if (calc.lastValue) {
+                    val = calc.lastValue;
+                } else {
+                    val = calc.slotA;
+                }
+
+                const resultado = operacoes[op](val, calc.slotB);
+
+                display.value = resultado;
+                calc.lastValue = resultado;
+                calc.lastRes = true
             }
-
-            const resultado = operacoes[op](val, calc.slotB);
-
-            display.value = resultado;
-            calc.lastValue = resultado;
-            calc.lastRes = true
         }
 
         console.log(calc)
